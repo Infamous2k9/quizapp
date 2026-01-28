@@ -2,22 +2,12 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="./public/assets/icons/favicon/favicon-32x32.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quizapp</title>
   </head>
   <body>
-    <section class="quizcard">
-      <div class="quizcard__headline"><h1>Frage?</h1></div>
-      <div class="quizcard__progressbar">10%</div>
-      <div class="quizcard__answer-list">
-        <div class="quizcard__answer">A1</div>
-        <div class="quizcard__answer">A2</div>
-        <div class="quizcard__answer">A3</div>
-        <div class="quizcard__answer">A4</div>
-      </div>
-      <div class="quizcard__footer">1/10</div>
-    </section>
+    <section class="quizcard" data-quiz-card></section>
   </body>
   <script type="module" src="./src/main.ts"></script>
 </html>

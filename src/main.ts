@@ -1,14 +1,8 @@
 import "./styles/styles.scss";
 
-interface Quiz {
-  question: string;
-  answers: string[];
-  isRight: number;
-}
-
-const questionArr = 1;
+import { card } from "./components/quiz-card";
 
 function init() {
-  console.log("lebe");
+  card.init();
 }
 init();
