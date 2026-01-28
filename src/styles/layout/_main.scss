@@ -1,3 +1,5 @@
+@use "../base/variables" as *;
+
 body {
   height: 100vh;
   display: flex;
@@ -6,5 +8,119 @@ body {
 }
 
 .quizcard {
-  border: 2px solid red;
+  border: 2px solid $blue;
+  background-color: $blue-soft;
+  border-radius: 35px;
+  box-shadow: $shadow;
+  padding: 16px 8px;
+  max-width: 80%;
+
+  &__headline{
+    text-align: center;
+  }
+  &__progressbar{
+    padding: $padding-xl;
+  }
+
+  &__answer-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 16px;
+  }
+  &__answer{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: $padding-s;
+    & > p{
+      padding: $padding-m;
+      border: solid 2px $blue;
+      border-radius: $radius-m;
+      box-shadow: $shadow;
+      background-color: $white;
+      min-width: 500px;
+      text-align: center;
+      transition: all .2s ease-in-out;
+      &:hover{
+        background-color: $blue;
+        color: $white;
+        transform: scale(1.2);
+      }
+    }
+  }
+  &__footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.right{
+  background-color: green !important;
+  color: $white !important;
+}
+.wrong{
+  background-color: red !important;
+  color: $white !important;
+}
+
+
+
+// Start Screen
+.start{
+  padding: 56px;
+  &__headline{
+    padding: 16px 8px;
+  }
+  &__content{
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.modus-btn{
+  padding: 24px 48px;
+  margin-top: 24px;
+  border: solid 2px $blue;
+  border-radius: $radius-m;
+  box-shadow: $shadow;
+  background-color: $white;
+  transition: all .2s ease-in-out;
+  &:hover{
+    color: $white;
+    background-color: $blue;
+    transform: scale(1.2);
+  }
+}
+
+.end{
+  padding: $padding-xl;
+  max-height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__image{
+    height: 500px;
+    margin: $padding-l;
+  }
+  &__msg{
+    padding: $padding-s;
+  }
+  &__btn{
+    padding: $padding-m;
+    border-radius: $radius-m;
+    border:  solid 2px $blue;
+    background-color: $white;
+    transition: all .2s ease-in-out;
+    &:hover{
+      background-color: $blue;
+      color: $white;
+      transform: scale(1.1);
+    }
+  }
 }

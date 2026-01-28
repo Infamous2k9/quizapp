@@ -5,6 +5,10 @@ import type { QuizData } from "../interfaces/quiz";
 import { getEndScreenHtml } from "../templates/end-screen";
 
 const quizCardRef = document.querySelector<HTMLElement>("[data-quiz-card]");
+const AUDIO_SUCCES = new Audio("./assets/audio/nice.mp3")
+const AUDIO_FAIL = new Audio("./assets/audio/nein.mp3")
+const AUDIO_WINNER = new Audio("./assets/audio/winner.mp3")
+
 
 export let card = {
   vars: {
@@ -32,6 +36,7 @@ export let card = {
       this.vars.rightAnswers,
       this.vars.data.length,
     );
+    AUDIO_WINNER.play()
   },
   setGameModus(input: string) {
     if (input == "HARD") {
@@ -78,7 +83,7 @@ export let card = {
         this.highligthAnswer(check, clickedAnwer, index);
         setTimeout(() => {
             this.nextQuestion()
-        }, 1000);
+        }, 2500);
       });
     }
   },
@@ -87,9 +92,11 @@ export let card = {
     let rigthElement = document.querySelector(`[data-quiz-answer="${this.vars.data[index].isRight}"]`)
     if (checked) {
       clickElement!.classList.add("right")
+      AUDIO_SUCCES.play()
     }else{
       clickElement!.classList.add("wrong")
       rigthElement!.classList.add("right")
+      AUDIO_FAIL.play()
     }
   },
   checkAnswer(input: string, index: number) {
